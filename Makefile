@@ -8,7 +8,7 @@ LDFLAGS = -lncurses
 #vysledny target
 TARGET = ttedit
 
-SRCS = NcursesTTEditor.cpp
+SRCS = main.cpp Editor.cpp
 
 #main
 $(TARGET): $(SRCS)
