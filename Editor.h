@@ -2,6 +2,12 @@
 #include <memory>
 #include "ITextBuffer.h"
 
+enum class Mode
+{
+    EDIT,
+    COMMAND
+};
+
 class Editor
 {
 private:
@@ -11,7 +17,14 @@ private:
     int cursor_y;
     bool running;
 
+    Mode mode;
+    std::string command_buffer;
+    std::string status_message;
+
     void handle_input(int ch);
+    void handle_edit_mode(int ch);
+    void handle_command_mode(int ch);
+    void execute_command();
     void draw();
 
 public:
