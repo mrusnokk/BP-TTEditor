@@ -1,4 +1,3 @@
-
 #compilator
 CXX = g++
 #copilator flags
@@ -9,9 +8,10 @@ LDFLAGS = -lncurses
 TARGET = ttedit
 
 SRCS = main.cpp Editor.cpp
+HEADERS = Editor.h ITextBuffer.h TextBuffer.h GapBuffer.h DummyBuffer.h
 
 #main
-$(TARGET): $(SRCS)
+$(TARGET): $(SRCS) $(HEADERS)
 	$(CXX) $(CXXFLAGS) $(SRCS) -o $(TARGET) $(LDFLAGS)
 
 clean:

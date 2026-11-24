@@ -1,10 +1,11 @@
 #include "Editor.h"
-#include "DummyBuffer.h"
+// #include "DummyBuffer.h"
+#include "TextBuffer.h"
 
 int main(int argc, char *argv[])
 {
     std::string filename;
-    auto buffer = std::make_unique<DummyBuffer>();
+    auto buffer = std::make_unique<TextBuffer>();
     if (argc > 1)
     {
         filename = argv[1];
